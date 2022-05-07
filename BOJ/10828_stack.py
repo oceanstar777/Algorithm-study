@@ -1,3 +1,6 @@
+# stack
+# input()으로 받으면 시간초과
+# sys.stdin.readline()
 import sys
 
 
@@ -28,3 +31,21 @@ class Stack:
             print(self.lst[-1])
         except IndexError:
             print(-1)
+
+
+s = Stack()
+
+n = int(sys.stdin.readline())
+
+for _ in range(n):
+    command = list(sys.stdin.readline().split())
+    if command[0] == 'push':
+        s.push(int(command[-1]))
+    elif command[0] == 'pop':
+        s.pop()
+    elif command[0] == 'size':
+        s.size()
+    elif command[0] == 'empty':
+        s.empty()
+    elif command[0] == 'top':
+        s.top()
